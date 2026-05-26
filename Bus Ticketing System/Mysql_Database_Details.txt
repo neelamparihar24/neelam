@@ -1,0 +1,25 @@
+All Queries:
+create database busdb;
+use busdb;
+show tables;
+desc bus_ticket;
+drop table Bus_Details;
+
+CREATE TABLE Bus_Details(
+    bus_name VARCHAR(50) PRIMARY KEY,
+    avail_seat INT
+);
+
+INSERT INTO Bus_Details VALUES ('HansTravels', 200);
+
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    gender VARCHAR(10),
+    mobile VARCHAR(15),
+    bus_name VARCHAR(50),
+    seats_booked INT,
+    booking_time DATETIME
+);
+
+select * from bookings;
