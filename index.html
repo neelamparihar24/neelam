@@ -4,103 +4,752 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Website</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <style>
 body{scroll-behavior:smooth;font-family:Arial,sans-serif}
-.hero{min-height:100vh;background:linear-gradient(135deg,#0d6efd,#6610f2);color:#fff;display:flex;align-items:center}
+.hero{
+    background:linear-gradient(135deg,#efef89,#daa25e);
+    color:rgba(16, 15, 15, 0.981);
+    padding:60px 0 30px;
+}
+.hero h1{
+    text-shadow:2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero img{
+    transition:0.4s ease;
+}
+
+.hero img:hover{
+    transform:scale(1.05);
+}
 .section-title{font-weight:700;margin-bottom:1.5rem}
-.skill-badge{margin:.25rem}
-.project-card:hover{transform:translateY(-5px);transition:.3s}
-footer{background:#111;color:#fff}
+.skill-card{
+    border:none;
+    border-radius:15px;
+    transition:all 0.4s ease;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.skill-card:hover{
+    transform:scale(1.08) translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.skill-card i,
+.skill-card img{
+    transition:transform 0.4s ease;
+}
+
+.skill-card:hover i,
+.skill-card:hover img{
+    transform:scale(1.2);
+}
+
+.skill-card h6{
+    font-weight:600;
+    margin-top:10px;
+    color:#fff;
+}
+
+
+.python-bg{
+    background:linear-gradient(135deg,#92bde1,#e8d799);
+}
+
+.mysql-bg{
+    background:linear-gradient(135deg,#81c7da,#00A4BD);
+}
+
+.excel-bg{
+    background:linear-gradient(135deg,#95ceaf,#6b8e7e);
+}
+
+.powerbi-bg{
+    background:linear-gradient(135deg,#dad2ad,#FFB000);
+}
+
+.pandas-bg{
+    background:linear-gradient(135deg,#aca4d4,#6A1B9A);
+}
+
+.numpy-bg{
+    background:linear-gradient(135deg,#748ab9,#013243);
+}
+
+.cleaning-bg{
+    background:linear-gradient(135deg,#00B4DB,#0083B0);
+}
+
+.matplotlib-bg{
+    background:linear-gradient(135deg,#e6a97b,#FFA000);
+}
+
+
+.skill-level{
+    opacity:0;
+    transform:translateY(10px);
+    transition:0.3s;
+    color:#fff;
+    font-size:14px;
+}
+
+.skill-card:hover .skill-level{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Education Cards */
+
+.education-card{
+    border:none;
+    border-radius:20px;
+    color:white;
+    transition:all 0.4s ease;
+    overflow:hidden;
+}
+
+.education-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 35px rgba(0,0,0,0.25);
+}
+
+.education-card .card-body{
+    padding:25px;
+}
+
+.education-card h4{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.education-card p{
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+/* Individual Card Colors */
+
+.pgdit-card{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.bsc-card{
+    background:linear-gradient(135deg,#00b09b,#96c93d);
+}
+
+.hsc-card{
+    background:linear-gradient(135deg,#ff9966,#ff5e62);
+}
+
+.ssc-card{
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+    color:#333;
+}
+.certifications{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.certification-card{
+    background:linear-gradient(135deg,#e69142e2,#e0dc58e6);
+    color:white;
+    border-radius:25px;
+    transition:all 0.4s ease;
+}
+
+.certification-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.cert-icon{
+    font-size:60px;
+}
+
+.certification-card h3{
+    font-weight:700;
+}
+
+.certification-card h5{
+    color:#fff8dc;
+}
+.project-card{
+    background:linear-gradient(135deg,#1e293b,#334155);
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:all 0.4s ease;
+    color:#fff;
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Project Backgrounds */
+.python-project{
+    background:linear-gradient(135deg,#3776AB,#FFD43B);
+}
+
+.powerbi-project{
+    background:linear-gradient(135deg,#F2C811,#FF9800);
+}
+
+.excel-project{
+    background:linear-gradient(135deg,#107C41,#34A853);
+}
+
+.dashboard-project{
+    background:linear-gradient(135deg,#8E2DE2,#4A00E0);
+}
+
+.bus-project{
+    background:linear-gradient(135deg,#00B4DB,#0083B0);
+}
+
+.project-card .card-body{
+    padding:20px;
+}
+
+.project-card a{
+    color:#fff;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.Experience-card{
+    background:linear-gradient(135deg,#1e293b,#334155);
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:all 0.4s ease;
+    color:#fff;
+}
+.experience-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+.yardi-experience{
+    background:linear-gradient(135deg,#b06d40,#7ec9ec);
+}
+
+.seven-experience{
+    background:linear-gradient(135deg,#3776AB,#FFD43B);
+}
+
+.sunflower-experience{
+    background:linear-gradient(135deg,#00B4DB,#0083B0);
+}
+
+.experience-card .card-body{
+    padding:20px;
+}
+
+.experience-card a{
+    color:#fff;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.contact-card{
+    background:linear-gradient(135deg,#2f458d,#dfe779);
+    color:white;
+    border:none;
+    border-radius:20px;
+    transition:all 0.4s ease;
+}
+
+.contact-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.contact-card h5{
+    font-weight:700;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.contact-card p{
+    font-size:1rem;
+    margin-bottom:12px;
+}
+
+.contact-card strong{
+    color:#ffd700;
+}
+footer{background:#111;color:#1398a1}
 </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-<div class="container"><a class="navbar-brand" href="#home">MyPortfolio</a>
+<div class="container"><a class="navbar-brand" href="#home">Neelam Parihar</a>
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto">
+
 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
 <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+<li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 </ul></div></div></nav>
 
-<section id="home" class="hero text-center">
-<div class="container">
-<h1 class="display-3 fw-bold">Hi, I'm Neelam Parihar</h1>
-<p class="lead">Data Analyst | Power BI Developer | Excel Specialist</p>
-<a href="#projects" class="btn btn-light btn-lg mt-3">View Work</a>
-</div></section>
+<!-- About Section -->
+<section id="about" class="py-5"></section>
 
-<section id="about" class="py-5 mt-5">
-<div class="container">
-<h2 class="section-title">About Me</h2>
-<div class="row align-items-center g-4">
-<div class="col-md-4 text-center">
-<img src="profile.jpg" class="img-fluid rounded-circle shadow" alt="Neelam Parihar" style="width:180px;height:180px;object-fit:cover;">
-</div>
-<div class="col-md-8">
-<p>Hello! I'm <strong>Neelam Parihar</strong>, Analytical and detail-oriented specialist, having collectively 4 years of experience in data handling, digital marketing and sales through multiple online platforms.
- Having good knowledge and hands on experience on business-driven portals and social media, Proficiency in tools like Google Analytics, Excel and Power BI.</p>
-<p>I specialize in Python, Mysql, Excel, PowerBI. I love solving problems, learning new technologies, and turning ideas into reality.</p>
-<p><strong>Experience:</strong> 4 Years | <strong>Location:</strong> Rewari, Haryana | <strong>Email:</strong> neelam.s.parihar24@gmail.com</p>
-<a href="#contact" class="btn btn-primary">Hire Me</a>
-</div>
-</div>
-</div></section>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Left Content -->
+             
+            <div class="col-lg-7 text-center text-lg-start">
+                <h4 class="mb-3">Hello, I'm</h4>
 
+                <h1 class="display-2 fw-bold mb-3">
+                    Neelam Parihar
+                </h1>
+
+                <h3 class="mb-4">
+                    Data Analyst | Power BI Specialist | Excel Specialist
+                </h3>
+
+                <p class="lead mb-4">
+                    Analytical and detail-oriented professional with 4+ years of
+                    experience in Data Analysis, Business Intelligence, Reporting,
+                    Dashboard Development, and Data Visualization.
+                </p>
+
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap">
+                    <a href="#projects" class="btn btn-light btn-lg">
+                        View Projects
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline-light btn-lg">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Profile Image -->
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <img src="profile.jpg"
+                     alt="Neelam Parihar"
+                     class="img-fluid rounded-circle shadow-lg border border-4 border-white"
+                     style="width:320px;height:320px;object-fit:cover;">
+            </div>
+
+        </div>
+    </div>
+</section>
 <section id="skills" class="py-5 bg-light">
 <div class="container">
-<h2 class="section-title">Skills</h2>
-<div class="row g-3">
-<div class="col-md-3"><div class="p-3 border rounded text-center">Python</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">MySQL</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">Advanced Excel</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">Power BI</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">Pandas</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">NumPy</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">Data Cleaning</div></div>
-<div class="col-md-3"><div class="p-3 border rounded text-center">Google Analytics</div></div>
+<h2 class="section-title text-center">Skills</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card python-bg text-center p-3 h-100">
+        <i class="devicon-python-plain display-3 text-white"></i>
+        <h6>Python</h6>
+        <div class="skill-level">
+        </div>
+    </div>
 </div>
-</div></section>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card mysql-bg text-center p-3 h-100">
+        <i class="devicon-mysql-plain display-3 text-white"></i>
+        <h6>MySQL</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card excel-bg text-center p-3 h-100">
+        <img src="https://img.icons8.com/color/96/microsoft-excel-2019.png" width="70">
+        <h6>Advanced Excel</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card powerbi-bg text-center p-3 h-100">
+        <img src="https://img.icons8.com/color/96/power-bi.png" width="70">
+        <h6>Power BI</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card pandas-bg text-center p-3 h-100">
+        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103832.png" width="70">
+        <h6>Pandas</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card numpy-bg text-center p-3 h-100">
+        <img src="https://img.icons8.com/color/96/numpy.png" width="70">
+        <h6>Numpy</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card cleaning-bg text-center p-3 h-100">
+        <img src="https://img.icons8.com/color/96/database.png" width="70">
+        <h6>Data Cleaning</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-6">
+    <div class="card skill-card matplotlib-bg text-center p-3 h-100">
+        <img src="https://img.icons8.com/color/96/matplotlib.png" width="70">
+        <h6>Matplotlib</h6>
+        <div class="skill-level">
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</section>
 
 <section id="education" class="py-5">
 <div class="container">
-<h2 class="section-title">Education</h2>
-<div class="card p-4 shadow-sm mb-3"><h5>PGDIT (International Trade)</h5><p class="mb-1">IMDR, Pune</p><small>2010 - 2012</small></div>
-<div class="card p-4 shadow-sm mb-3"><h5>B.Sc. Biotechnology</h5><p class="mb-1">M.V.M. Bhopal</p><small>2010</small></div>
-</div></section>
+
+<h2 class="section-title text-center mb-5">🎓 Education</h2>
+
+<div class="row g-4">
+
+<!-- PGDIT -->
+<div class="col-md-6">
+<div class="card education-card pgdit-card h-100">
+<div class="card-body">
+
+<h4>PGDIT (International Trade)</h4>
+
+<p><strong>Institute:</strong> IMDR, Pune</p>
+<p><strong>University:</strong> DES</p>
+<p><strong>Percentage:</strong> 61.31%</p>
+<p><strong>Year:</strong> 2010 - 2012</p>
+
+</div>
+</div>
+</div>
+
+<!-- BSc -->
+<div class="col-md-6">
+<div class="card education-card bsc-card h-100">
+<div class="card-body">
+
+<h4>B.Sc. Biotechnology with computer science</h4>
+
+<p><strong>Institute:</strong> M.V.M. Bhopal</p>
+<p><strong>University:</strong> B.U. Bhopal</p>
+<p><strong>Percentage:</strong> 68.82%</p>
+<p><strong>Year:</strong> 2010</p>
+
+</div>
+</div>
+</div>
+
+<!-- HSC -->
+<div class="col-md-6">
+<div class="card education-card hsc-card h-100">
+<div class="card-body">
+
+<h4>Higher Secondary (H.S.C)</h4>
+
+<p><strong>School:</strong> S.V.M. Bankhedi</p>
+<p><strong>Board:</strong> M.P. Board</p>
+<p><strong>Percentage:</strong> 79.77%</p>
+<p><strong>Year:</strong> 2006</p>
+
+</div>
+</div>
+</div>
+
+<!-- SSC -->
+<div class="col-md-6">
+<div class="card education-card ssc-card h-100">
+<div class="card-body">
+
+<h4>Secondary School (S.S.C)</h4>
+
+<p><strong>School:</strong> S.V.M. Bankhedi</p>
+<p><strong>Board:</strong> M.P. Board</p>
+<p><strong>Percentage:</strong> 86.66%</p>
+<p><strong>Year:</strong> 2004</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+<section id="certifications" class="py-5">
+<div class="container">
+<h2 class="section-title text-center mb-5">
+📜Certifications
+</h2>
+
+<div class="row g-4 justify-content-center">
+<div class="col-lg-8">
+
+<div class="card certification-card border-0 shadow-lg">
+<div class="card-body p-5 text-center">
+
+<div class="cert-icon mb-3"></div>
+
+<h3 class="fw-bold">
+Data Analyst Certification Course
+</h3>
+
+<h5 class="mb-3">
+Zillion Softech, Rewari, Haryana
+</h5>
+
+<p>
+<strong>Duration:</strong> 2025 – 2026
+</p>
+
+<p>
+Learned concepts of Data Analytics and developed strong analytical thinking skills.
+Gained hands-on experience through real-world projects using Python, SQL, Excel,
+Power BI, Data Visualization, and AI-powered tools.
+</p>
+
+<a href="https://www.zillionsoftech.com/"
+target="_blank"
+class="btn btn-light btn-lg fw-bold mt-3">
+Visit Institute
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
 
 <section id="projects" class="py-5">
 <div class="container">
-<h2 class="section-title">Projects</h2>
-<div class="row g-4">
-<div class="col-md-4"><div class="card project-card h-100"><div class="card-body"><h5>Python Project</h5><p>Bus Ticket Booking Ststem
-    https://github.com/neelamparihar24/neelam/tree/main/Bus%20Ticketing%20System </p></div></div></div>
-<div class="col-md-4"><div class="card project-card h-100"><div class="card-body"><h5>Python Project</h5><p>ERP System
-    https://github.com/neelamparihar24/My-Python-Projects </p></div></div></div>
+<h2 class="section-title text-center mb-5">
+    🚀 Projects
+</h2>
+<div class="row g-4 justify-content-center">
 
-<div class="col-md-4"><div class="card project-card h-100"><div class="card-body"><h5>Power Bi sales Dashboard</h5><p>ERP System
-    https://github.com/neelamparihar24/Dashboard </p></div></div></div>
+<div class="col-md-4">
+<div class="card project-card python-project h-100">
+
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800"
+alt="Python Project">
+
+<div class="card-body">
+<h5>Python ERP System</h5>
+
+<p>ERP system developed using Python for inventory and business management.</p>
+
+<a href="https://github.com/neelamparihar24/My-Python-Projects" target="_blank">
+View Project →
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card project-card powerbi-project h-100">
+
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+alt="Power BI Dashboard">
+
+<div class="card-body">
+<h5>Power BI Sales Dashboard</h5>
+
+<p>Interactive dashboard showing KPIs, sales performance and trends.</p>
+
+<a href="https://github.com/neelamparihar24/Dashboard" target="_blank">
+View Project →
+</a>
+
+</div>
+</div>
+</div>
     
-<div class="col-md-4"><div class="card project-card h-100"><div class="card-body"><h5>Dashboard</h5><p>Excel dashboard And Invoice Creation.</p></div></div></div>
-<div class="col-md-4"><div class="card project-card h-100"><div class="card-body"><h5>Portfolio</h5><p>Power BI Business Report.</p></div></div></div>
+<div class="col-md-4">
+<div class="card project-card excel-project h-100">
+
+<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800"
+     alt="Excel Automated Form">
+
+<div class="card-body">
+<h5>Excel Automated Form</h5>
+
+<p>Automated data-entry and reporting forms using advanced Excel features.</p>
+
+<a href="https://github.com/neelamparihar24/Excel-Projects" target="_blank">
+View Project →
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card project-card dashboard-project h-100">
+
+<img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800"
+alt="Excel Dashboard">
+
+<div class="card-body">
+<h5>Excel Sales Dashboard</h5>
+
+<p>Business dashboard built using Pivot Tables, Charts and KPIs.</p>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card project-card bus-project h-100">
+
+<img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=800"
+alt="Bus Ticketing System">
+
+<div class="card-body">
+<h5>Bus Ticketing System</h5>
+
+<p>Python-based booking and seat reservation system.</p>
+
+<a href="https://github.com/neelamparihar24/My-Python-Projects/tree/main/Bus%20Ticketing%20System"
+target="_blank">
+View Project →
+</a>
+
+</div>
+</div>
+</div>
+
 </div></div></section>
+
+<section id="experience" class="py-5">
+<div class="container">
+<h2 class="section-title text-center mb-5">
+    Work Experience
+</h2>
+<div class="row g-4 justify-content-center">
+
+<div class="col-md-4">
+<div class="card experience-card yardi-experience h-100">
+<div class="card-body">
+<h5>Yardi Software, Pune</h5>
+<a href="https://yardi.com"
+target="_blank">
+View Website →
+</a>
+<p> Audit Specialist <small>March 2016 to 2017</small></p>
+<p>• Automated data consolidation reports using VBA and Ensured 100% data accuracy in monthly management reports.</p>
+<p>• Incorporated data analysis techniques through “Power BI”, specializing in time series analysis, to deliver valuable insights, Accurate billing (budget) forecasting and interactive dashboards creation, driving business success</p>
+<p>• Worked on complex parameter to drill down in worksheet and customization using filters and slicers </p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card experience-card seven-experience h-100">
+<div class="card-body">
+<h5>SEVEN- Hilton Builders and Textiles Pvt Ltd, Lonavala</h5>
+
+<p> Sr. Executive <small>September 2014 to 2016</small></p>
+<p>• Collecting data through various platforms (Facebook, magic bricks and 99 acres) and analyze data, created interactive dashboard using excel to track online enquiry.</p>
+<p>• Hands on experience on Power BI and Excel</p>
+<p>• Developed strong analytical skills by managing data and customer feedback, leading to a self-improvement in service efficiency, Accuracy and compliance.</p>
+<p>• Handling data as well as providing sales insight to management.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card experience-card sunflower-experience h-100">
+<div class="card-body">
+<h5>Sunflower Information Technologies P L, Pune</h5>
+<a href="https://sunflower-india.com"
+target="_blank">
+View Website →
+</a>
+<p> Marketing Executive <small>2012-2014</small></p>
+<p>• Doing competitive analysis and Utilize data analysis to gain deep insights into customer behavior, preferences, and trends, helping the company understand its target audience better.</p>
+<p>• Developed strong understanding of business goals, strategies and market dynamics to align data-driven insights with organizational objectives.</p>
+<p>• Utilize tools such as Excel and inhouse Dashboard application to analyze large datasets, identifying patterns and opportunities for growth.</p>
+<p>• Create clear and concise reports and automated dashboards to communicate insights effectively to leadership for strategic decision-making and cross-functional teams.</p>
+</div>
+</div>
+</div>
+   
+</div></div></section>   
 
 <section id="contact" class="py-5 bg-light">
 <div class="container">
-<h2 class="section-title">Contact</h2>
-<div class="row g-4">
+<h2 class="section-title text-center">Contact</h2>
+<div class="row justify-content-center g-4">
+<div class="col-lg-6 col-md-8 col-sm-10">
 
-<div class="col-md-6">
-<div class="card p-4 shadow-sm h-100">
-<h5>Contact Information</h5>
-<p><strong>Name:</strong> Neelam Parihar</p>
-<p><strong>Phone:</strong> +91 81494 40003</p>
-<p><strong>Email:</strong> neelam.s.parihar24@gmail.com</p>
-<p><strong>Location:</strong> Rewari, Haryana, India</p>
+<div class="card contact-card p-4 shadow-lg h-100">
+
+<h5>📞 Contact Information</h5>
+
+<p><strong>👤 Name:</strong> Neelam Parihar</p>
+
+<p><strong>📱 Phone:</strong>
+<a href="tel:+918149440003"
+   style="color:white;text-decoration:none;">
+   +91 81494 40003
+</a>
+</p>
+
+<p><strong>✉️ Email:</strong>
+<a href="mailto:neelam.s.parihar24@gmail.com"
+   style="color:white;text-decoration:none;">
+   neelam.s.parihar24@gmail.com
+</a>
+</p>
+
+<p><strong>📍 Location:</strong> Pune, Maharashtra, India</p>
+
+<div class="text-center mt-3">
+<a href="mailto:neelam.s.parihar24@gmail.com"
+   class="btn btn-light fw-bold">
+   Contact Me
+</a>
 </div>
+
 </div>
 </div>
 </div></section>
